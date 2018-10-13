@@ -1,0 +1,1 @@
+console.log("this save globle var")

@@ -1,0 +1,27 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "mall web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jiangqianghua/Jqhmall_web.git"
+  },
+  "author": "jqh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangqianghua/Jqhmall_web/issues"
+  },
+  "homepage": "https://github.com/jiangqianghua/Jqhmall_web#readme",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^3.10.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {}
+}
