@@ -9,6 +9,18 @@
 
 var webpack = require('webpack');
 var Ex = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+var getHtmlConfig = function(name){
+	return {
+		template:'./src/view/'+name+'.html',
+			filename:'view/'+name+'.html',
+			jnject:true,
+			hash:true,
+			chunks:['common',name]
+	}
+}
+
 var config ={
 	entry:{
 		'index':['./src/page/index/index.js'],
@@ -44,12 +56,24 @@ var config ={
 	},
 
 	plugins:[
-	// 抽取公共模块，只有一个js多个js引用的时候回生效
+		// 抽取公共模块，只有一个js多个js引用的时候回生效
 		new webpack.optimize.CommonsChunkPlugin({
 			name:'common',
 			filename:'js/base.js'  // 会放在dist目录下
 		}),
-		new Ex("css/[name].css")
+		// css单独大包
+		new Ex("css/[name].css"),
+		//html模版处理
+		// new HtmlWebpackPlugin({
+		// 	template:'./src/view/index.html',
+		// 	filename:'view/index.html',
+		// 	jnject:true,
+		// 	hash:true,
+		// 	chunks:['common','index']
+		// }),
+
+		new HtmlWebpackPlugin(getHtmlConfig('index')),
+		new HtmlWebpackPlugin(getHtmlConfig('login'))
 	]
 }
 
