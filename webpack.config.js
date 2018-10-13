@@ -57,14 +57,14 @@ var config ={
 	        	})
         	},
         	{
-	        	test: /\.(gif|png|jpg|)$/,
+	        	test: /\.(gif|png|jpg|eot|svg|ttf|woff|woff2)$/,
 	        	use: [
 			        {
 			            loader: 'url-loader',
 			            options: {
-			                limit: 1000000//,
-			                // name:'[name].[ext]',
-			                // publicPath: 'resource/',
+			                limit: 1024,//,
+			                name:'[name].[ext]',
+			                outputPath: 'resource/',
 			            }
 			        }
 			    ]
@@ -75,6 +75,7 @@ var config ={
 	resolve:{
 		alias:{
 			util    : __dirname +'/src/util',
+			node_modules : __dirname + '/node_modules',
 			page    : __dirname + '/src/page',
 			service : __dirname + '/src/service',
 			image   : __dirname + '/src/image'
