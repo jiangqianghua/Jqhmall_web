@@ -72,6 +72,15 @@ var config ={
     	]
 	},
 
+	resolve:{
+		alias:{
+			util    : __dirname +'/src/util',
+			page    : __dirname + '/src/page',
+			service : __dirname + '/src/service',
+			image   : __dirname + '/src/image'
+		}
+	},
+
 	plugins:[
 		// 抽取公共模块，只有一个js多个js引用的时候回生效
 		new webpack.optimize.CommonsChunkPlugin({

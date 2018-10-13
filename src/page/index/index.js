@@ -1,3 +1,4 @@
+/**
 import bar from './bar';
 
 require('../module')
@@ -9,3 +10,16 @@ $("div").html("ccc");
 
 console.log("index");
 bar();
+**/
+
+var mm = require('util/mm.js');
+//http://happymmall.com/product/list.do?keyword=1
+mm.request({
+	url : '/product/list.do?keyword=1',
+	success : function(res){
+		console.log(res);
+	},
+	error : function(errMsg){
+		console.log(errMsg);
+	}
+});
