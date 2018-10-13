@@ -10,6 +10,9 @@
 var webpack = require('webpack');
 var Ex = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// 配置环境变量，是dev还是online
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+console.log(WEBPACK_ENV)
 
 var getHtmlConfig = function(name){
 	return {
@@ -29,6 +32,7 @@ var config ={
 	},
 	output:{
 		path:'/Volumes/disk03/workspace/web/jqhmall/dist',
+		publicPath:'/dist',   //作用是可以让webpack-dev-server修改实时生效
 		filename:'js/[name].js'
 	},
 	externals:{
@@ -51,6 +55,19 @@ var config ={
 	            	fallback: "style-loader",
 	            	use: "css-loader"
 	        	})
+        	},
+        	{
+	        	test: /\.(gif|png|jpg|)$/,
+	        	use: [
+			        {
+			            loader: 'url-loader',
+			            options: {
+			                limit: 1000000//,
+			                // name:'[name].[ext]',
+			                // publicPath: 'resource/',
+			            }
+			        }
+			    ]
         	}
     	]
 	},
@@ -75,6 +92,12 @@ var config ={
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('login'))
 	]
+}
+
+//  如果是dev环境
+if('dev' === WEBPACK_ENV){
+	console.log("is dev");
+	config.entry.common.push("webpack-dev-server/client?http://localhost:8088/");
 }
 
 module.exports = config;
