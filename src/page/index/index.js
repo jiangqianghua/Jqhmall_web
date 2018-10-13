@@ -29,6 +29,7 @@ mm.request({
 **/
 
 //测室hogan模版
+/**
 var html = '<div>{{data}}</div>';
 
 var data = {
@@ -36,3 +37,7 @@ var data = {
 };
 
 console.log(mm.renderHtml(html,data));
+**/
+//require('page/common/nav-simple/index.js');
+require('page/common/nav/index.js');
+require('page/common/footer/index.js');
