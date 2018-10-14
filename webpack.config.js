@@ -28,7 +28,7 @@ var getHtmlConfig = function(name,title){
 var config ={
 	entry:{
 		'index':['./src/page/index/index.js'],
-		'login':['./src/page/login/index.js'],
+		'user-login':['./src/page/user-login/index.js'],
 		'common':['./src/page/common/index.js'],  // 该模块回放在base.js中
 		'result':['./src/page/result/index.js'],
 	},
@@ -108,7 +108,7 @@ var config ={
 		// }),
 
 		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-		new HtmlWebpackPlugin(getHtmlConfig('login','登录页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login','登录页面')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','结果页面'))
 	]
 }
