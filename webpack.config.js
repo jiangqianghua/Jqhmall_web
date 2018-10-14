@@ -68,7 +68,13 @@ var config ={
 			            }
 			        }
 			    ]
-        	}
+        	},
+        	{
+	        	test: /\.string$/,
+	        	use: [{
+	        		loader:'html-loader'
+	        	}]
+        	},
     	]
 	},
 
