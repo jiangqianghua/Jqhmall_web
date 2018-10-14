@@ -14,10 +14,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV)
 
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name,title){
 	return {
 		template:'./src/view/'+name+'.html',
 			filename:'view/'+name+'.html',
+			title:title,
 			jnject:true,
 			hash:true,
 			chunks:['common',name]
@@ -29,6 +30,7 @@ var config ={
 		'index':['./src/page/index/index.js'],
 		'login':['./src/page/login/index.js'],
 		'common':['./src/page/common/index.js'],  // 该模块回放在base.js中
+		'result':['./src/page/result/index.js'],
 	},
 	output:{
 		path:'/Volumes/disk03/workspace/web/jqhmall/dist',
@@ -105,8 +107,9 @@ var config ={
 		// 	chunks:['common','index']
 		// }),
 
-		new HtmlWebpackPlugin(getHtmlConfig('index')),
-		new HtmlWebpackPlugin(getHtmlConfig('login'))
+		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+		new HtmlWebpackPlugin(getHtmlConfig('login','登录页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('result','结果页面'))
 	]
 }
 
