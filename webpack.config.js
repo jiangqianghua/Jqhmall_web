@@ -29,6 +29,7 @@ var config ={
 	entry:{
 		'index':['./src/page/index/index.js'],
 		'user-login':['./src/page/user-login/index.js'],
+		'user-register':['./src/page/user-register/index.js'],
 		'common':['./src/page/common/index.js'],  // 该模块回放在base.js中
 		'result':['./src/page/result/index.js'],
 	},
@@ -108,7 +109,8 @@ var config ={
 		// }),
 
 		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-		new HtmlWebpackPlugin(getHtmlConfig('user-login','登录页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','结果页面'))
 	]
 }
