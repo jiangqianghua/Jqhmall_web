@@ -12,7 +12,7 @@ var _user = {
 	},
 	checkUsername : function(username, resolve , reject){
 		_mm.request({
-			url  	: _mm.getServerUrl('/user/register.do'),
+			url  	: _mm.getServerUrl('/user/check_valid.do'),
 			data	:{
 				type	: 'username',
 				str		: username 
@@ -24,7 +24,7 @@ var _user = {
 	},
 	register : function(userInfo , resolve , reject){
 		_mm.request({
-			url 	: _mm.getServerUrl('user/register.do'),
+			url 	: _mm.getServerUrl('/user/register.do'),
 			data	: userInfo,
 			method	: 'POST',
 			success	: resolve,
