@@ -41,7 +41,7 @@ var _user = {
 	},
 	getQuestion : function(username , resolve , reject){
 		_mm.request({
-			url 	: _mm.getServerUrl('user/forget_get_question.do'),
+			url 	: _mm.getServerUrl('/user/forget_get_question.do'),
 			data	:{
 				username : username
 			},

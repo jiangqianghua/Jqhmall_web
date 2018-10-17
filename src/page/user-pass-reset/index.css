@@ -1,6 +1,6 @@
 .page-wrap{
 	padding: 40px 0;
-	background: #e72955;
+/*	background: #e72955;*/
 }
 
 .user-con{
@@ -39,6 +39,15 @@
 	top: 50%;
 	font-size: 14px;
 	margin-top: -7px;
+}
+
+.user-con .step-con{
+	display: none;
+}
+
+.user-con .user-item-text{
+	margin-bottom: 10px;
+	font-size: 14px;
 }
 
 .user-con .user-item{
@@ -88,5 +97,7 @@
 	margin-left: 10px;
 	color: #999;
 }
+
+
 
 

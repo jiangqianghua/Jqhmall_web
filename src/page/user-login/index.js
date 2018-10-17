@@ -12,7 +12,7 @@ var formError = {
 		$('.error-item').show().find('.err-msg').text(errMsg);
 	},
 	hide : function(){
-		$('.error-item').hiden().find('.err-msg').text('');
+		$('.error-item').hide().find('.err-msg').text('');
 	}
 };
 
