@@ -52,7 +52,7 @@ var _user = {
 	},
 	checkAnswer : function(userInfo , resolve , reject){
 		_mm.request({
-			url 	: _mm.getServerUrl('/user/forget_check_ansser.do'),
+			url 	: _mm.getServerUrl('/user/forget_check_answer.do'),
 			data	: userInfo , 
 			method	: 'POST',
 			success	: resolve , 

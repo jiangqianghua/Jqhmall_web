@@ -53,7 +53,7 @@ var page = {
 				_user.checkAnswer({
 					username:_this.data.username ,
 					question:_this.data.question , 
-					answer:_this.data.answer
+					answer:answer
 				}
 				 , function(res){
 					_this.data.answer = answer ;
@@ -64,6 +64,24 @@ var page = {
 				});
 			}else{
 				formError.show('请输入密码提示问题的答案');
+			}
+		});
+
+		$('#submit-password').click(function(){
+			var password = $.trim($('#password').val());
+			if(password && password.length > 5){
+				_user.resetPassword({
+					username:_this.data.username ,
+					passwordNew:_this.data.password , 
+					forgetToken:_this.data.token
+				}
+				 , function(res){
+					window.location.href = './result.html?type=pass-reset';
+				},function(errMsg){
+					formError.show(errMsg);
+				});
+			}else{
+				formError.show('请输入不少于6位的密码');
 			}
 		});
 	},
@@ -81,6 +99,7 @@ var page = {
 		$('.step-username').hide().siblings('.step-question').show().find('.question').text(this.data.question)
 	},
 	loadStepPassword:function(){
+		formError.hide();
 		// 加载用户密码
 		$('.step-question').hide().siblings('.step-password').show();
 	}
