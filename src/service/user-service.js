@@ -82,6 +82,7 @@ var _user = {
 		_mm.request({
 			url 	: _mm.getServerUrl('/user/update_information.do'),
 			data	: userInfo , 
+			method	: 'POST',
 			success :resolve , 
 			error	: reject 
 		});
