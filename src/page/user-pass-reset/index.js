@@ -72,7 +72,7 @@ var page = {
 			if(password && password.length > 5){
 				_user.resetPassword({
 					username:_this.data.username ,
-					passwordNew:_this.data.password , 
+					passwordNew:password , 
 					forgetToken:_this.data.token
 				}
 				 , function(res){

@@ -70,7 +70,7 @@ var _user = {
 		});
 	},
 
-	getUserUnfo : function(resolve , reject){
+	getUserInfo : function(resolve , reject){
 		_mm.request({
 			url 	: _mm.getServerUrl('/user/get_information.do'),
 			method	: 'POST',
