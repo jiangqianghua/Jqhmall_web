@@ -1,4 +1,72 @@
 
-body{
-		background: url('/image/banner/banner1.jpg');
+.keywords-list{
+	float: left;
+	background: #666;
+	height: 350px;
+	padding: 10px;
+	margin-right: 10px;
+	color: #fff;
 }
+
+.keywords-list .keywords-item{
+	padding-left: 10px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+}
+
+.keywords-list .keywords-item:hover{
+	background: #999;	
+}
+
+.keywords-list .keywords-item .link{
+	margin-right: 6px;
+	color: #fff;
+}
+
+.keywords-list .keywords-item .link:hover{
+	color:#c60023;
+}
+
+.banner-con{
+	background: #ffff00;
+	float: left;
+	height: 370px;
+}
+
+.banner-con .loading{
+	margin-top:150px;
+}
+
+.banner-con .banner-img{
+	width: 100%;
+	height: 370px;
+}
+
+.banner-con .banner-arrow{
+	position: absolute;
+	top: 160px;
+	width: 30px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	background: #ccc;
+	background: rgba(0,0,0,.2);
+	cursor: pointer;
+}
+
+.banner-con .banner-arrow:hover{
+	background: #aaa;
+	background: rgba(0,0,0,.5);
+}
+.banner-con .banner-arrow.prev{
+	left: 0;
+}
+
+.banner-con .banner-arrow.next{
+	right: 0;
+}
+
+
