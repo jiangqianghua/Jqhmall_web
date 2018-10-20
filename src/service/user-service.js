@@ -90,7 +90,7 @@ var _user = {
 	// 登录状态下
 	updatePasword : function(userInfo , resolve , reject){
 		_mm.request({
-			url 	: _mm.getServerUrl('/user/reset_password'),
+			url 	: _mm.getServerUrl('/user/reset_password.do'),
 			data	: userInfo,
 			method	: 'POST',
 			success	: resolve ,
