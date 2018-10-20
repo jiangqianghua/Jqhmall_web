@@ -35,7 +35,7 @@ var page = {
 					_mm.successTips();
 					window.location.href = './user-center.html';
 				}, function(errMsg){
-					_mm.errorTips(validateResult.msg);
+					_mm.errorTips(errMsg);
 				});
 			}else{
 				_mm.errorTips(validateResult.msg);
