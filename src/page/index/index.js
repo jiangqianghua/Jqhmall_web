@@ -43,8 +43,28 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/footer/index.js');
 require('page/common/header/index.js');
-var navSide = require('page/common/nav-side/index.js');
-navSide.init({
-	name:'user-center'
+require('util/slider/index.js')
+var templateBanner = require('./banner.string');
+var _mm = require('util/mm.js');
+
+
+$(function() {
+	//var bannerHtml = _mm.renderHtml(templateBanner);
+	//$('.banner-con').html(bannerHtml);
+    $('.banner').unslider({
+	    speed: 500,               // 动画的速度,没有过度效果时为 false  (整型或布尔型)
+	    delay: 3000,              // 幻灯片之间的延迟，没有自动播放时为false（整数或布尔）
+	    complete: function() {},  // 播放每张幻灯片后调用的函数
+	    keys: true,               // 允许键盘左右键控制
+	    dots: true,               // 显示点导航
+	    fluid: false              // 支持响应式设计
+	});
+
+    // 前一张和后一张操作的事件绑定
+    $('.banner-con .banner-arrow').click(function(){
+        var forward = $(this).hasClass('prev') ? 'prev' : 'next';
+        $('.banner').data('unslider')[forward]();
+    });
 });
+
 

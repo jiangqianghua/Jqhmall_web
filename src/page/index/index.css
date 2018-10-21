@@ -70,3 +70,46 @@
 }
 
 
+.floor-wrap .floor-title{
+	line-height: 50px;
+	color: #d58717;
+	font-weight: normal;;font-size: 20px;
+	border-bottom: 1px solid #d59717;
+}
+
+.floor-wrap .floor-list{
+	margin-right: -20px;
+}
+
+.floor-wrap .floor-list .floor-item {
+	background: #fff;
+	position: relative;
+	width: 200px;
+	height: 220px;
+	margin: 15px 20px 15px 0px;
+	float: left;
+	cursor: pointer;
+}
+
+
+
+.floor-wrap .floor-list .floor-item:hover {
+	box-shadow: 1px 1px 7px #ddd;
+}
+
+.floor-wrap .floor-list .floor-item .floor-text{
+	position: absolute;
+	top: 12px;
+	left: 20px;
+	font-size: 16px;
+	color: #555;
+}
+
+.floor-wrap .floor-list .floor-item .floor-img{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 80%;
+    height: 75%;
+    border: none;
+}
